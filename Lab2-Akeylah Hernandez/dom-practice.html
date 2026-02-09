@@ -6,13 +6,14 @@
     <title> Akeylah Lab 2</title>
 </head>
 <body>
+    <!--Creating a header, paragraphs,  div's, buttons with text, unique id's and classes-->
     <h1 id="title">DOM Selection Lab</h1>
     <p  class="info">The DOM is a tree-like representation of an HTML document
-    Each HTML element becomes a node in the tree</p>
+    Each HTML element becomes a node in the tree.</p>
 
     <p  class="info">The DOM is not a part of the JS language.
     The browser creates the DOM and gives us an API to interact with the DOM. 
-    We use JS to interact with this DOM  API</p>
+    We use JS to interact with this DOM  API.</p>
    
     <p  class="info">Each node is represented as an object
     We use JS to navigate and manipulate these nodes (their properties and methods).</p>
@@ -21,20 +22,22 @@
     <button  class="action-btn">Button 1</button>
     <button  class="action-btn">Button 2</button>
     <button  id="special-btn">Button 3</button>
-    
     </div>
 
 <script defer>
-
+    //Selecting elements using DOM manipulation and storing them in reusable variables  
     const title = document.getElementById("title");
+    const classInfo = document.querySelector(".info");
+    const buttons = document.querySelectorAll(".action-btn");
+
+    //Applying Error handling for each element and log them to the console 
     if(!title) {
        console.error("Title element not found");
     } 
     else {
     console.log("Title:", title);
     }
-
-    const classInfo = document.querySelector(".info");
+    
     if(!classInfo) {
        console.error("Info element not found!");
     } 
@@ -42,7 +45,6 @@
         console.log("Info:", classInfo);
     }
 
-    const buttons = document.querySelectorAll(".action-btn");
     if(buttons.length  <= 0) {
         console.error("No buttons with class 'action-btn' found!");
     }

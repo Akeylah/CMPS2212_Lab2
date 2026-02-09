@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akeylah Lab 2</title>
+
     <style>
-        .box{
-            width:200px;
-            height: 200px;
-            background-color: lightgray;
-            border: 2px solid black;
-            margin:10px;
-            padding:20px;
-            display: inline-block;
-        }
+    .box{
+    width:200px;
+    height: 200px;
+    background-color: lightgray;
+    border: 2px solid black;
+    margin:10px;
+    padding:20px;
+    display: inline-block;
+    }
     </style>
+    
 </head>
 <body>
+    <!--Creating a header, divs and buttons with text, unique id's and classes-->
     <h1 id="main-heading">Color Changer Lab</h1>
     
     <div class="box" id="box1"> Box 1</div>
@@ -29,13 +32,15 @@
     <button id="btn-green">Make Green</button>
     <button id="reset-btn">Reset All</button>
 
- <script>
+    <script defer>
+    //Selecting elements using DOM manipulation and storing them in reusable variables  
      const boxes = document.querySelectorAll(".box");
      const Redbutton = document.getElementById("btn-red");
      const Bluebutton = document.getElementById("btn-blue");
      const Greenbutton = document.getElementById("btn-green");
      const Resetbutton = document.getElementById("reset-btn");
 
+    //Applying Error handling for each element and log them to the console 
     if(boxes.length === 0) {
        console.error("Box element not found");
     } 
@@ -71,40 +76,39 @@
     console.log("Reset Button:", Resetbutton);
     }
 
-        
+    
+    //Adding Event listeners to elements to add interactivity and Implementing Error Handling   
     if(Redbutton) {
     Redbutton.addEventListener('click', () => {
-        boxes.forEach(box => {
-        box.style.backgroundColor = 'red';
-        });
+    boxes.forEach(box => {
+    box.style.backgroundColor = 'red';
+    });
     });
     }
 
-        
     if(Bluebutton) {
     Bluebutton.addEventListener('click', () => {
-        boxes.forEach(box => {
-        box.style.backgroundColor = 'blue';
-        });
+    boxes.forEach(box => {
+    box.style.backgroundColor = 'blue';
+    });
     });
     }
 
     if(Greenbutton) {
     Greenbutton.addEventListener('click', () => {
-        boxes.forEach(box => {
-        box.style.backgroundColor = 'green';
-        });
+    boxes.forEach(box => {
+    box.style.backgroundColor = 'green';
     });
-    }
-    if(Resetbutton) {
-    Resetbutton.addEventListener('click', () => {
-        boxes.forEach(box => {
-        box.style.backgroundColor = 'lightgray';
-        });
     });
     }
 
-    
+    if(Resetbutton) {
+    Resetbutton.addEventListener('click', () => {
+    boxes.forEach(box => {
+    box.style.backgroundColor = 'lightgray';
+    });
+    });
+    }
 
  </script>
 </body>

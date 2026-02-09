@@ -15,6 +15,7 @@
     </style>
 </head>
 <body>
+    <!--Creating a header, paragraphs and buttons with text, unique id's and classes-->
     <h1 id="page-title">Text Highlighter</h1>  
     <p  class="paragraph">Siblings are elements at the same level in the DOM tree, sharing the same parent.</p>
     <p  class="paragraph">Descendants are all elements nested within an element at any depth (children, grandchildren, etc.).</p>
@@ -26,13 +27,15 @@
     <button id="toggle-btn">Toggle First Paragraph</button>
 
 
-    <script>
+    <script defer>
+    //Selecting elements using DOM manipulation and storing them in reusable variables  
     const paragraphs = document.querySelectorAll('.paragraph');
     const paragraph1 = document.querySelector('.paragraph');
     const Highbutton = document.getElementById('highlight-btn');
     const clearbutton = document.getElementById('clear-btn');
     const togglebutton = document.getElementById('toggle-btn');
 
+    //Applying Error handling for each element and log them to the console 
     if (paragraphs.length === 0) {
     console.error("No paragraph elements were found");
     } 
@@ -68,24 +71,28 @@
     console.log("toggle-btn:", togglebutton);
     }
 
-
+    //Adding Event listeners to elements to add interactivity and Implementing Error Handling   
+    if(Highbutton){
     Highbutton.addEventListener('click', () => {
     paragraphs.forEach(p => {
     p.classList.add('highlight');
     });
     });
+    }
 
+    if(clearbutton){
     clearbutton.addEventListener('click', () => {
     paragraphs.forEach(p => {
     p.classList.remove('highlight');
     });
     });
+    }
 
-    
+    if(togglebutton && paragraph1){
     togglebutton.addEventListener('click', () => {
     paragraph1.classList.toggle('highlight');
-  });
-
+    });
+    }
 
     </script>
 </body>
