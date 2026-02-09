@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Akeylah Lab 2</title>
+
+    <style>
+
+    .highlight {
+    background-color: yellow;
+    padding: 10px;
+    border-left: 4px solid orange;
+    }
+    </style>
+</head>
+<body>
+    <h1 id="page-title">Text Highlighter</h1>  
+    <p  class="paragraph">Siblings are elements at the same level in the DOM tree, sharing the same parent.</p>
+    <p  class="paragraph">Descendants are all elements nested within an element at any depth (children, grandchildren, etc.).</p>
+    <p  class="paragraph">The getElementsByTagName() method which returns which returns a Live HTMLCollection</p>
+    <p  class="paragraph">The DOM API provides us with methods to add elements (objects) to the DOM.</p>
+
+    <button id="highlight-btn">Highlight All</button>
+    <button id="clear-btn">Clear Highlights</button>
+    <button id="toggle-btn">Toggle First Paragraph</button>
+
+
+    <script>
+    const paragraphs = document.querySelectorAll('.paragraph');
+    const paragraph1 = document.querySelector('.paragraph');
+    const Highbutton = document.getElementById('highlight-btn');
+    const clearbutton = document.getElementById('clear-btn');
+    const togglebutton = document.getElementById('toggle-btn');
+
+    if (paragraphs.length === 0) {
+    console.error("No paragraph elements were found");
+    } 
+    else {
+    console.log("Paragraphs:", paragraphs);
+    }
+
+    if (!paragraph1) {
+    console.error("The first (paragraph) element was not found");
+    } 
+    else {
+    console.log("Paragraph1:", paragraph1);
+    }
+
+    if (!Highbutton) {
+    console.error("The (highlight-btn) button was not found");
+    } 
+    else {
+    console.log("highlight-btn:", Highbutton);
+    }
+
+    if (!clearbutton) {
+    console.error("The (clear-btn) button was not found");
+    } 
+    else {
+    console.log("clear-btn:", clearbutton);
+    }
+
+    if (!togglebutton) {
+    console.error("The (toggle-btn) button was not found");
+    } 
+    else {
+    console.log("toggle-btn:", togglebutton);
+    }
+
+
+    Highbutton.addEventListener('click', () => {
+    paragraphs.forEach(p => {
+    p.classList.add('highlight');
+    });
+    });
+
+    clearbutton.addEventListener('click', () => {
+    paragraphs.forEach(p => {
+    p.classList.remove('highlight');
+    });
+    });
+
+    
+    togglebutton.addEventListener('click', () => {
+    paragraph1.classList.toggle('highlight');
+  });
+
+
+    </script>
+</body>
+</html>
